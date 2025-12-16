@@ -18,14 +18,41 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // track active section via hash
   useEffect(() => {
-    const onHashChange = () => {
-      setActiveHash(window.location.hash || "#home");
-    };
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    const sectionIds = NAV_LINKS.map((link) => link.href.replace("#", ""));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // sort visible sections by their top position
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) =>
+              (a.target as HTMLElement).offsetTop -
+              (b.target as HTMLElement).offsetTop
+          );
+
+        if (visible[0]) {
+          const id = visible[0].target.id;
+          setActiveHash(`#${id}`);
+        }
+      },
+      {
+        root: null,
+        threshold: 0.35, // how much of section must be visible
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
   }, []);
+
 
   const toggleMobile = () => setMobileOpen((prev) => !prev);
 

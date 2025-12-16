@@ -26,7 +26,7 @@ const itemVariants = {
 
 export function Hero() {
   return (
-    <section className="relative mx-auto flex min-h-[70vh] flex-col items-center justify-center overflow-hidden">
+    <section id="home" className="relative mx-auto flex min-h-[70vh] flex-col items-center justify-center overflow-hidden">
       <motion.div
         className="max-w-7xl rounded-md md:border border-border/50 py-10 shadow-sm backdrop-blur-[0.1px] md:px-20 md:py-14"
         variants={containerVariants}
