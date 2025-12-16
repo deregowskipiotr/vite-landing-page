@@ -37,7 +37,7 @@ export function Hero() {
           {/* Left: text block */}
           <div className="space-y-6">
             <motion.div
-              className="inline-flex items-center gap-4 md:gap-2 rounded-full border border-border/60 bg-muted/60 px-5 md:py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground"
+              className="inline-flex w-full md:w-auto items-center gap-4 md:gap-2 rounded-full border border-border/60 bg-muted/60 px-5 md:py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground"
               variants={itemVariants}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-destructive" />
@@ -72,13 +72,13 @@ export function Hero() {
             >
               <button
                 type="button"
-                className="rounded-md bg-destructive px-10 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-destructive/90 cursor-pointer"
+                className="rounded-md bg-destructive w-full md:w-auto px-10 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-destructive/90 cursor-pointer"
               >
                 Primary action
               </button>
               <button
                 type="button"
-                className="rounded-md border border-border px-10 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-muted/70 cursor-pointer"
+                className="hidden md:block rounded-md border border-border px-10 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-muted/70 cursor-pointer"
               >
                 Secondary link
               </button>
