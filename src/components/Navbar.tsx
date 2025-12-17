@@ -58,17 +58,17 @@ export function Navbar() {
 
   return (
     <>
-      
-        {/* fixed bar */}
-        <motion.header
-          className="fixed inset-x-0 top-0 z-40 mr-5 md:mr-15 ml-5 md:ml-15"
-          initial={false}
-          animate={{
-            backdropFilter: isScrolled ? "blur(6px)" : "blur(0px)",
-          }}
-          transition={{ duration: 0.25 }}
-        >
-          <div className="w-full bg-background/80 border border/10 rounded-md mt-3">
+      {/* fixed bar */}
+      <motion.header
+        className="fixed inset-x-0 top-0 z-40"
+        initial={false}
+        animate={{
+          backdropFilter: isScrolled ? "blur(6px)" : "blur(0px)",
+        }}
+        transition={{ duration: 0.25 }}
+      >
+        <div className="mx-auto mt-3 w-full max-w-7xl px-3 md:px-5">
+          <div className="w-full rounded-md border border-border/40 bg-background/80">
             {/* DESKTOP / TABLET */}
             <nav className="hidden md:flex items-center justify-between px-5 md:px-10 py-3">
               {/* Left: logo */}
@@ -141,19 +141,21 @@ export function Navbar() {
               </div>
             </div>
           </div>
-        </motion.header>
+        </div>
+      </motion.header>
 
-        {/* MOBILE MENU PANEL (below fixed bar) */}
-        <AnimatePresence>
-          {mobileOpen && (
-            <motion.div
-              key="mobile-menu"
-              initial={{ y: -8, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -6, opacity: 0 }}
-              transition={{ duration: 0.18, ease: "easeOut" }}
-              className="fixed inset-x-0 top-[52px] z-30 md:hidden bg-background/95 border-b border-border/40 px-5 pb-4 pt-2"
-            >
+      {/* MOBILE MENU PANEL (below fixed bar) */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ y: -8, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -6, opacity: 0 }}
+            transition={{ duration: 0.38, ease: "easeOut" }}
+            className="fixed inset-x-0 top-[52px] z-30 md:hidden bg-background/95 border-b border-border/40 h-full"
+          >
+            <div className="mx-auto w-full max-w-7xl px-3 md:px-5 pb-4 pt-2">
               {/* links */}
               <motion.ul
                 className="flex flex-col mt-2 gap-2 text-sm font-medium"
@@ -211,10 +213,10 @@ export function Navbar() {
               >
                 Sign In
               </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-     
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

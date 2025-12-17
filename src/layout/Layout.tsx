@@ -9,8 +9,7 @@ type LayoutProps = {
 
 export function Layout({ children }: LayoutProps) {
   return (
-    <div className="relative min-h-screen bg-background text-foreground px-5 md:px-10">
-   
+    <div className="relative min-h-screen bg-background text-foreground px-5 md:px-10 overflow-x-hidden">
       <Navbar />
       <main className="pt-16 md:pt-20">{children}</main>
     </div>

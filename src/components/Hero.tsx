@@ -51,13 +51,6 @@ export function Hero() {
       id="home"
       className="relative mx-auto flex min-h-[70vh] max-w-7xl flex-col items-center justify-center px-4 md:px-8 overflow-hidden"
     >
-      {/* soft background gradient */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-x-0 top-0 h-64 bg-linear-to-b from-destructive/10 via-background to-background" />
-        <div className="absolute -left-32 bottom-0 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -right-24 top-10 h-52 w-52 rounded-full bg-accent/10 blur-3xl" />
-      </div>
-
       <motion.div
         className="flex w-full flex-col items-center text-center"
         variants={containerVariants}
@@ -65,7 +58,7 @@ export function Hero() {
         animate="show"
       >
         {/* soft mist behind main text */}
-        <div className="pointer-events-none absolute inset-x-4 mx-auto h-60 max-w-3xl rounded-[40%] bg-destructive/10 blur-3xl md:inset-x-10" />
+        <div className="pointer-events-none absolute inset-x-4 mx-auto h-38 md:h-60 max-w-3xl rounded-[40%] bg-destructive/10 blur-3xl md:inset-x-10" />
 
         {/* content on top */}
         <motion.div className="relative flex flex-col items-center text-center"></motion.div>
