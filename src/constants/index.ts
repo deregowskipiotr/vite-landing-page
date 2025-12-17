@@ -1,9 +1,17 @@
 export const NAV_LINKS = [
   { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
   { href: "#features", label: "Features" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
+];
+
+export const CHIPS = [
+  "Framer Motion ready",
+  "Dark & light modes",
+  "Glassmorphism details",
+  "Scroll-linked nav",
+  "OKLCH color system",
 ];
 
 type SpotlightFeature = {
