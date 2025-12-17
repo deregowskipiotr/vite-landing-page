@@ -58,7 +58,7 @@ export function Hero() {
         animate="show"
       >
         {/* soft mist behind main text */}
-        <div className="pointer-events-none absolute inset-x-4 mx-auto h-38 md:h-60 max-w-3xl rounded-[40%] bg-destructive/10 blur-3xl md:inset-x-10" />
+        <div className="pointer-events-none absolute inset-x-4 mx-auto h-38 md:h-60 max-w-2xl rounded-[20%] md:rounded-[40%] bg-destructive/10 blur-3xl md:inset-x-10" />
 
         {/* content on top */}
         <motion.div className="relative flex flex-col items-center text-center"></motion.div>

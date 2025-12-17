@@ -29,12 +29,14 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative mx-auto max-w-7xl py-16 md:py-20 px-4 md:px-8"
+      className="relative mx-auto max-w-7xl py-16 md:py-20 px-4 md:px-8 overflow-hidden"
     >
+      {/* Hero-style mist - DIRECT in section, no wrapper */}
+      <div className="pointer-events-none absolute inset-x-4 mx-auto h-40 md:h-60 max-w-2xl rounded-[20%] md:rounded-[40%] bg-destructive/10 blur-3xl md:inset-x-10" />
       {/* subtle background accent */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-destructive/20 via-background to-background" />
-        <div className="absolute -left-24 top-4 h-40 w-40 rounded-full bg-primary/14 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 -z-20">
+        <div className="absolute inset-x-4 mx-auto h-40 md:h-60 max-w-2xl rounded-[40%] bg-destructive/10 backdrop-blur-xl md:inset-x-10" />
+        <div className="absolute -left-24 top-4 h-40 w-40 rounded-full bg-primary/20 backdrop-blur-xl" />
       </div>
 
       <motion.div

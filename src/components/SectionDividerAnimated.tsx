@@ -7,7 +7,7 @@ export function SectionDividerAnimated() {
       <div className="relative h-px rounded-full bg-linear-to-r from-destructive/50 via-primary/60 to-accent/50 overflow-hidden">
         <motion.div
           className="absolute inset-y-0 w-1/3 bg-linear-to-r from-transparent via-destructive to-transparent"
-          initial={{ x: "-70%" }}
+          initial={{ x: "-30%" }}
           animate={{ x: "170%" }}
           transition={{
             duration: 2.4,
